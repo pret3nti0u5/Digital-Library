@@ -1,0 +1,335 @@
+@font-face{
+    font-family: "haxorville";
+    src: url(res/fonts/haxorville.ttf);
+}
+
+@font-face{
+    font-family: "unscii";
+    src: url(res/fonts/unscii-16.ttf);
+}
+
+@font-face{
+    font-family: "monsterFriend";
+    src: url(res/fonts/MonsterFriendFore.otf);
+}
+
+body{
+    padding: 0%;
+    margin: 0px;
+}
+
+html, body, #container{
+    height: 100%;
+}
+
+#container{
+    background-color: black;
+    overflow: auto;
+}
+
+#titleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 47, 47);
+    font-size: xx-large;
+    font-family: 'monsterFriend';
+    padding-top: 56px;
+}
+
+#titleContainer > h1{
+    margin-top: 16px;
+    margin-bottom: 0px;
+}
+
+#titleContainer > h2{
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+#bookContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.book{
+    display: flex;
+    background: black;
+    font-family: 'monsterFriend';
+    color: white;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 250px;
+    width: 180px;
+    margin: 48px 56px 48px 56px;
+    padding: 8px;
+    border-style: solid;
+    border-color: rgb(255, 47, 47);
+    box-shadow: 15px 15px rgb(71, 12, 12);
+}
+
+.book, #newBook, #submit, #crtEffect > p{ 
+    transition: all 0.1s ease-in-out; 
+}
+
+.book:hover, #newBook:hover, #submit:hover, #crtEffect > p:hover{ 
+    transform: scale(1.1); 
+    background-color: rgb(255, 47, 47);
+    color: black;
+    box-shadow: none;
+}
+
+.cursor4 {
+    -webkit-animation: blink 0.8s infinite;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% {
+    opacity: 0;
+    }
+    40% {
+    opacity: 0;
+    }
+    50% {
+    opacity: 1;
+    }
+    90% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+  
+#angleBracket{
+    font-family: haxorville;
+    font-size: 60px;
+}
+
+#container.CRT::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+#container.noCRT::before{
+}
+
+#newBook{
+    color: white;
+    border: solid rgb(255, 47, 47);
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#crtEffect{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'monsterFriend';
+}
+
+#crtEffect > p{
+    margin: auto;
+    padding: 8px;
+    border: solid rgb(255, 47, 47);
+}
+
+.bookName{
+    font-size: 18px;
+    text-align: center;
+}
+
+.author{
+    font-size: 12px;
+    text-align: center;
+}
+
+.pages{
+    font-size: 10px;
+    text-align: center;
+}
+
+.read{
+    font-size: 8px;
+    text-align: center;
+}
+
+.toggle{
+    font-size: 14px;
+}
+
+.book:hover .toggle, .book:hover .delete, .book:hover .options{
+    transform: translate(0px, -10px);
+    visibility: visible;
+    transition: 0.1s ease-in-out;
+}
+
+.delete, .toggle{
+    cursor: pointer;
+}
+
+.options{
+    width: 190px;
+    height:50px;
+    position: absolute;
+    top: -22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: hidden;
+    color: white;
+}
+
+#popupContainer{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    top: 0px;
+}
+
+#popup{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border: 5px solid rgb(255, 47, 47);
+    border-radius: 16px;
+    padding: 56px 56px 56px 0px;
+}
+
+#alertContainer{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+
+#alert{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    border: 5px solid rgb(255, 47, 47);
+    border-radius: 16px;
+    padding: 56px;
+    font-family: "monsterFriend";
+    font-size: 20px;
+}
+
+#alertClose{
+    position: absolute;
+    top: 252px;
+    right: 480px;
+    cursor: pointer;
+    color: white;
+    font-size: 50px;
+    font-family: "unscii";
+}
+
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+label{
+    cursor: pointer;
+}
+
+.label{
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+    color: white;
+    font-family: "monsterFriend";
+    font-size: 28px;
+    padding-right: 30px;
+}
+input[type=text]{
+    width: 500px;
+    height: 28px;
+    background-color: #181818;
+    border: solid rgb(255, 47, 47);
+    border-radius: 8px;
+    font: 28px "monsterFriend";
+    color: white;
+    padding: 10px;
+}
+input[type=text]:focus{
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+}
+
+label[for="readStatus"]{
+    color: white;
+    font-family: "monsterFriend";
+    font-size: 28px;
+    padding-right: 30px;
+}
+input[type="checkbox"]{
+    width: 50px;
+    height: 50px;
+}
+
+#submit{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    font-family: "monsterFriend";
+    color: white;
+    border: solid rgb(255, 47, 47);
+    border-radius: 16px;
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#closeButton{
+    position: absolute;
+    top: 50px;
+    right: 350px;
+    cursor: pointer;
+    color: white;
+    font-size: 50px;
+    font-family: "unscii";
+}
+
+#closeButton:hover, #alertClose:hover{
+    color: red;
+    transform: scale(1.3);
+    transition: 0.1s ease-in-out;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Digital Library</title>
+        <link href="main.css" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">     
+        <link rel="icon" href="res/icon/icon.ico">
+    </head>
+    <body>
+        <div id="container" class="CRT">
+            <div id="titleContainer">
+                <h1><span id="angleBracket">></span>Digital Library<span class="cursor4">_</span></h1> 
+                <h2>A Digital Library for keeping a track of your books.</h2>
+                <div>
+                    <p id="newBook">Add New Book!</p>
+                </div>
+            </div>
+            <div id="bookContainer"></div>
+            <div id="crtEffect">
+                <p>Toggle CRT Effect</p>
+            </div>
+            <div id="popupContainer">
+                <div id="popup">
+                    <div class="form">
+                        <label class="label" for="name">Book</label>
+                        <input id="name" type="text" placeholder="Title Of the book">
+                    </div>
+                    <div class="form">
+                        <label class="label" for="authorName">Author</label>
+                        <input id="authorName" type="text" placeholder="Author Of The Book">
+                    </div>
+                    <div class="form">
+                        <label class="label" for="noPages">Pages</label>
+                        <input id="noPages" type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" placeholder="Numbers Only">
+                    </div>
+                    <div class="form">
+                        <label for="readStatus">Already Read?</label>
+                        <input id="readStatus" type="checkbox">
+                    </div>
+                    <div id="submit">
+                        <p>Submit!</p>
+                    </div>
+                    <p id="closeButton">x</p>
+                </div>
+            </div>
+            <div id="alertContainer">
+                <div id="alert">
+                    <p>Please fill in all the details!</p>
+                    <p id="alertClose">x</p>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
