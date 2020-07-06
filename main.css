@@ -216,6 +216,7 @@ html, body, #container{
 
 #popup{
     display: flex;
+    position: relative;
     flex-direction: column;
     background-color: black;
     border: 5px solid rgb(255, 47, 47);
@@ -236,6 +237,7 @@ html, body, #container{
 
 #alert{
     display: flex;
+    position: relative;
     flex-direction: column;
     color: white;
     background-color: black;
@@ -248,8 +250,8 @@ html, body, #container{
 
 #alertClose{
     position: absolute;
-    top: 252px;
-    right: 480px;
+    top: -60px;
+    right: 10px;
     cursor: pointer;
     color: white;
     font-size: 50px;
@@ -320,8 +322,8 @@ input[type="checkbox"]{
 
 #closeButton{
     position: absolute;
-    top: 50px;
-    right: 350px;
+    top: -60px;
+    right: 10px;
     cursor: pointer;
     color: white;
     font-size: 50px;
